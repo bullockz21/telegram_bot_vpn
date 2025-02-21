@@ -6,7 +6,7 @@ services:
     container_name: vpn_bot
     restart: always
     env_file:
-      - .env
+      - .env.docker
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
@@ -21,7 +21,7 @@ services:
     container_name: pgadmin_vpn
     restart: always
     env_file:
-      - .env
+      - .env.docker
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
