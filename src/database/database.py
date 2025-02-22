@@ -3,7 +3,13 @@ from sqlalchemy import Integer, func
 from sqlalchemy.orm import DeclarativeBase, declared_attr, Mapped, mapped_column
 from sqlalchemy.ext.asyncio import AsyncAttrs, async_sessionmaker, create_async_engine
 
-from config import settings
+from config.config import settings
+from typing import Annotated
+from sqlalchemy import String
+from sqlalchemy.orm import mapped_column
+
+
+uniq_str_an = Annotated[str, mapped_column(unique=True)]
 
 DATABASE_URL = settings.get_db_url()
 
